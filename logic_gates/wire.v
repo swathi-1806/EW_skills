@@ -8,6 +8,29 @@ Outputs: y
 */
 
 module top_module(input a, output y);
-  // Write your code here
   assign y=a;
 endmodule
+
+//testbench
+module top;
+  reg a;
+  wire y;
+  top_module dut(a,y);
+    initial begin
+      repeat(5)begin
+        a=$urandom_range(10,20);
+        #1;
+        $display("a=%0b||y=%0b",a,y);
+      end
+    end
+endmodule
+
+/*
+//output
+# a=1||y=1
+# a=0||y=0
+# a=1||y=1
+# a=0||y=0
+# a=1||y=1
+*/
+  
