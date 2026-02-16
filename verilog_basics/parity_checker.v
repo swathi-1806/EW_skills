@@ -36,8 +36,17 @@ module tb;
  parity_checker dut(D,odd_parity,even_parity);
   initial begin
    repeat(5)begin
-    d=$random;
+    D=$random;
+    #1;
     $display("D=%0b  odd_parity=%0b  even_parity=%0b",D,odd_parity,even_parity);
    end
   end
 endmodule
+/*
+OUTPUT:
+# D=00100100  odd_parity=0  even_parity=1
+# D=10000001  odd_parity=0  even_parity=1
+# D=00001001  odd_parity=0  even_parity=1
+# D=01100011  odd_parity=0  even_parity=1
+# D=00001101  odd_parity=1  even_parity=0
+*/
