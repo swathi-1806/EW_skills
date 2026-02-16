@@ -44,3 +44,32 @@ module vector_splitter (
     assign out4= in_vec[0];
     
 endmodule
+
+module tb;
+    reg [7:0] in_vec;
+    wire [3:0] out1;
+    wire [1:0] out2;
+    wire out3;
+    wire out4;
+    vector_splitter dut(.in_vec(in_vec),
+                        .out1(out1),
+                        .out2(out2),
+                        .out3(out3),
+                        .out4(out4));
+        initial begin
+            repeat(5)begin
+                in_vec=$random;
+                #1;
+                $display("input=%b   out1=%b  out2=%b   out3=%b   out4=%b",in_vec,out1,out2,out3,out4);
+            end
+        end
+endmodule
+
+/*
+OUTPUT:
+# input=00100100   out1=0010  out2=01   out3=0   out4=0
+# input=10000001   out1=1000  out2=00   out3=0   out4=1
+# input=00001001   out1=0000  out2=10   out3=0   out4=1
+# input=01100011   out1=0110  out2=00   out3=1   out4=1
+# input=00001101   out1=0000  out2=11   out3=0   out4=1
+*/
