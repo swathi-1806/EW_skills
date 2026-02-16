@@ -29,3 +29,15 @@ module parity_checker(D,odd_parity,even_parity);
         assign odd_parity=^D;
         assign even_parity=~(^D);
 endmodule
+
+module tb;
+ reg [7:0]D;
+ wire odd_parity,even_parity;
+ parity_checker dut(D,odd_parity,even_parity);
+  initial begin
+   repeat(5)begin
+    d=$random;
+    $display("D=%0b  odd_parity=%0b  even_parity=%0b",D,odd_parity,even_parity);
+   end
+  end
+endmodule
