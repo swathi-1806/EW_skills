@@ -34,7 +34,7 @@ module tb;
   reg [1:0]B;
   reg C,D;
   wire [7:0]OUT;
-  cancat8_packer dut(A,B,C,D,OUT);
+  concat8_packer dut(A,B,C,D,OUT);
     initial begin
       repeat (5)begin
         {A,B,C,D}=$random;
@@ -43,4 +43,13 @@ module tb;
       end
     end
 endmodule
+
+/*
+OUTPUT
+# A=0010 B=01  C=0  D=0 ||OUT=00100110
+# A=1000 B=00  C=0  D=1 ||OUT=10000011
+# A=0000 B=10  C=0  D=1 ||OUT=00001011
+# A=0110 B=00  C=1  D=1 ||OUT=01100001
+# A=0000 B=11  C=0  D=1 ||OUT=00001111
+*/
         
