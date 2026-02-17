@@ -28,3 +28,19 @@ module concat8_packer(A,B,C,D,OUT);
   output [7:0]OUT;
       assign OUT={A[3:0],B[1:0],~C,D};
 endmodule
+
+module tb;
+  reg [3:0]A;
+  reg [1:0]B;
+  reg C,D;
+  wire [7:0]OUT;
+  cancat8_packer dut(A,B,C,D,OUT);
+    initial begin
+      repeat (5)begin
+        {A,B,C,D}=$random;
+        #1;
+        $display("A=%b B=%b  C=%b  D=%b ||OUT=%b",A,B,C,D,OUT);
+      end
+    end
+endmodule
+        
