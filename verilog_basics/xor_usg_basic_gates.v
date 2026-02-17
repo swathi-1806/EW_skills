@@ -42,10 +42,9 @@ endmodule
 // ============================================================
 // XOR Gate
 // ============================================================
-module xor_gate (
+module xor_gate (a,b,y);
     input  a, b,
-    output y
-);
+    output y;
     // TODO: declare intermediate wires
     wire w1,w2,w3,w4;
     assign w1=~b;
@@ -55,3 +54,26 @@ module xor_gate (
     and_gate g2(.a(w2),.b(b),.y(w4));
     or_gate g3(.a(w3),.b(w4),.y(y));
 endmodule
+
+//testbench
+module tb;
+ reg a,b;
+ wire y;
+ xor_gate dut(a,b,y);
+  initial begin
+   repeat(5)begin
+    {a,b}=$random;
+   #1;
+   $display("a=%b  b=%b y=%b",a,b,y);
+   end
+  end
+endmodule
+
+/*
+OUTPUT:
+  a=0  b=0 y=0
+# a=0  b=1 y=1
+# a=0  b=1 y=1
+# a=1  b=1 y=0
+# a=0  b=1 y=1
+*/
