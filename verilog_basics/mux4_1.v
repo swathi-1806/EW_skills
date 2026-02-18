@@ -56,6 +56,7 @@ module tb;
     end
 endmodule
 
+
 /*
 output
           d3  d2  d1  d0    y
@@ -63,7 +64,7 @@ output
 # sel=00  1   0   0   0  =  0
 # sel=00  1   0   0   1  =  1
 # sel=10  1   1   0   0  =  1
-# sel=00  1   0   1    1 =  1
+# sel=00  1   0   1   1 =  1
 # sel=00  1   0   1   1  =  1
 # sel=10  1   0   1   0  =  0
 # sel=01  0   1   0   0  =  0
