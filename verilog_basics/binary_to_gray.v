@@ -30,3 +30,16 @@ module bin2gray4(bin_in,gray_out);
         assign gray_out[1]=bin_in[2]^bin_in[1];
         assign gray_out[0]=bin_in[1]^bin_in[0];
 endmodule
+
+module tb;
+ reg [3:0]bin_in;
+ wire [3:0]gray_out;
+ bin2gray4 dut(bin_in,gray_out)
+  initial begin
+   repeat(5)begin
+    {bin_in,gray_out}=$random;
+    #1;
+    $display("bin_in=%b,gray_out=%b",bin_in,gray_out);
+   end
+  end
+endmodule
