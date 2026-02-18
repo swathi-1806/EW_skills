@@ -49,6 +49,7 @@ shift8 dut(A,shamt,SHL,SHR);
     end
   end
 endmodule
+
 /*
 OUTPUT;
 # a=10100100  shamt=100 SHL=01000000 SHR=00001010
