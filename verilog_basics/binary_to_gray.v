@@ -34,12 +34,20 @@ endmodule
 module tb;
  reg [3:0]bin_in;
  wire [3:0]gray_out;
- bin2gray4 dut(bin_in,gray_out)
+ bin2gray4 dut(bin_in,gray_out);
   initial begin
    repeat(5)begin
-    {bin_in,gray_out}=$random;
+    {bin_in}=$random;
     #1;
     $display("bin_in=%b,gray_out=%b",bin_in,gray_out);
    end
   end
 endmodule
+
+/*
+  bin_in=0100,gray_out=0110
+# bin_in=0001,gray_out=0001
+# bin_in=1001,gray_out=1101
+# bin_in=0011,gray_out=0010
+# bin_in=1101,gray_out=1011
+*/
