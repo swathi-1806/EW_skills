@@ -11,7 +11,7 @@ Inputs: a, b
 Output: y
 Must instantiate the built-in nand primitive (no assign, no always).
 */
-odule nand2_prim (
+module nand2_prim (
     input  a,
     input  b,
     output y
