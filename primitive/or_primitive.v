@@ -19,3 +19,25 @@ module or2_prim (
     // TODO: instantiate the built-in OR gate primitive
     or g1(y,a,b);
 endmodule
+
+//testbench code
+module tb;
+ reg a,b;
+ wire y;
+ or2_prim dut(.a(a),.b(b),.y(y));
+   initial begin
+    repeat(5)begin
+     {a,b}=$random;
+     #1;
+     $display("a=%b  b=%b y=%b",a,b,y);
+    end
+   end
+endmodule
+/*
+OUTPUT
+# a=0  b=0 y=0
+# a=0  b=1 y=1
+# a=0  b=1 y=1
+# a=1  b=1 y=1
+# a=0  b=1 y=1
+*/
