@@ -11,6 +11,12 @@ Inputs: a, en
 Output: y
 Use the built-in primitive bufif1 (no assign, no always).
 */
+/*
+bufif1 = transparent when enable=1, else drives z.
+bufif0 = transparent when enable=0, else drives z.
+Tri-state buffers are used to share a bus; only one driver may be enabled at a time.
+If en=x or z, output may become x/z depending on a.
+*/
 
 module tribuf_prim (
     input  a,
