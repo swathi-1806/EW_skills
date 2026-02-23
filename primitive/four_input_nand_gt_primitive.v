@@ -36,3 +36,11 @@ module tb;
         end
     end
 endmodule
+
+/*
+  a=0 b=1  c=0 d=0 y=1
+# a=0 b=0  c=0 d=1 y=1
+# a=1 b=0  c=0 d=1 y=1
+# a=0 b=0  c=1 d=1 y=1
+# a=1 b=1  c=0 d=1 y=1
+*/
