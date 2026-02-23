@@ -40,3 +40,11 @@ module tb;
         end
     end
 endmodule
+
+/*
+# a=0  en=0  y=z 
+# a=0  en=1  y=0 
+# a=0  en=1  y=0 
+# a=1  en=1  y=1 
+# a=0  en=1  y=0 
+*/
