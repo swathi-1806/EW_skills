@@ -27,3 +27,16 @@ module tribuf_prim (
     // bufif1 <instance_name> ( <out>, <in>, <enable> );
    bufif1 g1 (y, a, en);
 endmodule
+
+module tb;
+    reg a,en;
+    wire y;
+    tribuf_prim dut(a,en,y);
+    initial begin
+        repeat (5)begin
+            {a,en}=$random;
+            #1;
+            $display("a=%b  en=%b  y=%b ",a,en,y);
+        end
+    end
+endmodule
