@@ -32,3 +32,10 @@ module tb;
             end
         end
 endmodule
+/*
+# a=0  b=0   sum=0   cout=0
+# a=0  b=1   sum=1   cout=0
+# a=0  b=1   sum=1   cout=0
+# a=1  b=1   sum=0   cout=1
+# a=0  b=1   sum=1   cout=0
+*/
