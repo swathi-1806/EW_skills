@@ -20,3 +20,15 @@ module ha_nand_only(a,b,sum,cout);
         nand g5(sum,w2,w3);
 endmodule
 
+module tb;
+    reg a,b;
+    wire sum,cout;
+    ha_nand_only dut(a,b,sum,cout);
+        initial begin
+            repeat(5)begin
+                {a,b}=$random
+                #1;
+                $display("a=%b  b=%b   sum=%b   cout=%b",a,b,sum,cout);
+            end
+        end
+endmodule
