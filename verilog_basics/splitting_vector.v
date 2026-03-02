@@ -66,10 +66,12 @@ module tb;
 endmodule
 
 /*
+
 OUTPUT:
 # input=00100100   out1=0010  out2=01   out3=0   out4=0
 # input=10000001   out1=1000  out2=00   out3=0   out4=1
 # input=00001001   out1=0000  out2=10   out3=0   out4=1
 # input=01100011   out1=0110  out2=00   out3=1   out4=1
 # input=00001101   out1=0000  out2=11   out3=0   out4=1
+
 */
